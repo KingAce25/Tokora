@@ -1,0 +1,114 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  background-color: #EFEEEE;
+  width: 100vw;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  font-size: 14pt;
+}
+
+a:hover {
+  transform: translate();
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  line-height: 1.1;
+  font-size: 46pt;
+  font-weight: 500;
+}
+
+p
+{
+  font-size: 14pt;
+}
+
+button {
+  border-radius: 25px;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 14pt;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+/* button:hover {
+  
+} */
+
+.feauture__card
+{
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 380px;
+}
+
+.feauture__card img
+{
+  height: 50px;
+  width: 50px;
+}
+
+.feauture__card h6
+{
+  font-size: 16px;
+  margin: 0;
+}
+
+.feauture__card p
+{
+  font-size: 14px;
+  margin: 0;
+}
+
+.how__card
+{
+  background-color: #fff;
+  width: 285px;
+  height: 215px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 3.25px 2.5px;
+  align-items: center;
+}
+
+.how__card img
+{
+  padding-top: 1rem;
+}
+
+.how__card h6
+{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.how__card p
+{
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}

@@ -1,0 +1,46 @@
+.navigate
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+    padding-top: 2rem;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    width: 70vw;
+    border-radius: 100px;
+    padding: .5rem 2rem;
+    margin: auto;
+    box-shadow: 0 6px 10px 0 rgb(202, 201, 201), 0 6px 10px 0 rgb(202, 201, 201);
+}
+
+.navigation .img
+{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.navigation .img img
+{
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.navigation .sections
+{
+    display: flex;
+    gap: 3rem;
+}
