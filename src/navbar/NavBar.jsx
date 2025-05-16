@@ -40,7 +40,7 @@ const NavBar = () => {
           <div className="sections">
             <a href="#features">Features</a>
             <a href="#how">How it works</a>
-            <a href="#faqs">FAQs</a>
+            <a href="#faq">FAQs</a>
           </div>
 
           <div className="actions">
