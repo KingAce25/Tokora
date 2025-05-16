@@ -1,11 +1,70 @@
-.faq
-{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 1240px;
-    text-align: center;
-    margin: auto;
-    margin-top: 3rem;
+
+.faq-wrapper {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.faq-wrapper.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.faq-header {
+  font-size: 32px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+
+.dropdown-btn {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  /* transition: background 0.3s ease; */
+  text-align: left;
+}
+
+.dropdown-btn.dark {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  background: #f0f0f0;
+  color: #000;
+  border-radius: 0 0 10px 10px;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  text-align: left;
+}
+
+.dropdown-content.dark {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  max-height: 500px; 
+  padding: 1rem;
 }

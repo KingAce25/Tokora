@@ -1,166 +1,235 @@
+/* Light and dark theme colors using CSS variables */
+.hero.light {
+  --bg-color: whitesmoke;
+  --text-color: black;
+  --button-bg: #6f42c1;
+  --button-hover-bg: #5a36a3;
+}
+
+.hero.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --button-bg: #bb86fc;
+  --button-hover-bg: #9a67ea;
+}
+
+/* Add these inside .hero.light and .hero.dark blocks or globally if you prefer */
+
+.hero.light {
+  --button-bg: black;
+  --button-text: white;
+  --button-hover-bg: #333; /* slightly lighter black */
+}
+
+.hero.dark {
+  --button-bg: white;
+  --button-text: black;
+  --button-hover-bg: #ddd; /* slightly darker white */
+}
+
+.hero__input button {
+  padding: 9px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border: 1px solid black !important;
+}
+
+.hero__input button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+
+.hero__input button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+
+/* Base styles */
 .hero {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: background-color 0.4s ease, color 0.4s ease, opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__header {
+  width: 65vw;
+  text-align: center;
+  font-size: 2.5rem;
+  animation: slideInFromLeft 1s ease forwards;
+}
+
+.hero__text {
+  display: flex;
+  width: 35vw;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  animation: slideInFromRight 1s ease forwards;
+}
+
+.hero__input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 3.5s ease-in-out infinite;
+}
+
+.hero__input button {
+  padding: 9px 18px;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.hero__input button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Toggle button styles */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1024px) {
+  .hero__header {
+    width: 75vw;
+    font-size: 2rem;
+  }
+
+  .hero__text {
+    width: 60vw;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero__header {
+    width: 85vw;
+    font-size: 1.8rem;
+  }
+
+  .hero__text {
+    width: 75vw;
+    font-size: 1rem;
+  }
+
+  .hero__input button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero__header {
+    width: 90vw;
+    font-size: 1.5rem;
+  }
+
+  .hero__text {
+    width: 85vw;
+    font-size: 0.95rem;
+  }
+
+  .hero__input {
     flex-direction: column;
     gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 2rem;
-    width: 100vw;
-    min-height: 100vh;
-    box-sizing: border-box;
-  
-    background-image: url('../assets/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: white;
   }
 
-.hero__header
-{
-    width: 65vw;
-    text-align: center;
-    color: black;
-}
-
-.hero__text
-{
-    display: flex;
-    width: 35vw;
-    text-align: center;
-    color: black;
-}
-
-.hero__input
-{
-    /* background-color: white; */
-    padding: .4rem .6rem;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero__input input
-{
-    padding: .2rem .2rem .5rem .2rem;
-    border: none;
-    color: black;
-    font-size: 14pt;
-    margin-top: 1.5rem;
-}
-
-.hero__input button
-{
-    padding: 9px 18px;
-}
-
-.hero__input.heartbeat
-{
-	-webkit-animation: heartbeat 3.5s ease-in-out infinite both;
-	        animation: heartbeat 3.5s ease-in-out infinite both;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- @-webkit-keyframes heartbeat {
-    from {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    10% {
-      -webkit-transform: scale(0.91);
-              transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    17% {
-      -webkit-transform: scale(0.98);
-              transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    33% {
-      -webkit-transform: scale(0.87);
-              transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    45% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
+  .hero__input button {
+    font-size: 0.85rem;
+    padding: 7px 14px;
   }
-  @keyframes heartbeat {
-    from {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    10% {
-      -webkit-transform: scale(0.91);
-              transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    17% {
-      -webkit-transform: scale(0.98);
-              transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    33% {
-      -webkit-transform: scale(0.87);
-              transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    45% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-  }  
+}
+
+/* Animations */
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

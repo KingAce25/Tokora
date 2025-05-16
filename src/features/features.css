@@ -1,31 +1,116 @@
-.features
-{
-    padding-bottom: 1.4rem;
-    gap: 25px;
-    padding: 10px 30px;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+.features {
+  padding: 10px 30px 1.4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  gap: 25px;
 }
 
-.feature__header
-{
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 2rem;
+.feature__header {
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.feature__header h3
-{
-    font-weight: 500;
-    font-size: 40px;
-    padding-top: 1rem;
+.feature__header h3 {
+  font-weight: 500;
+  font-size: 40px;
+  padding-top: 1rem;
 }
 
-.feature__cards
-{
-    justify-content: center;
-    margin: auto;
-    gap: 1.3rem;
-    display: flex;
-    flex-wrap: wrap;
+.feature__cards {
+  justify-content: center;
+  margin: auto;
+  gap: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Base card styles */
+.feauture__card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 380px;
+}
+
+/* Dark mode styles */
+body.dark .feauture__card {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.feauture__card img {
+  height: 50px;
+  width: 50px;
+}
+
+.feauture__card h6 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.feauture__card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ---------- Responsive Styles ---------- */
+
+@media screen and (max-width: 1024px) {
+  .feature__header h3 {
+    font-size: 36px;
+  }
+
+  .feauture__card {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feature__header h3 {
+    font-size: 32px;
+  }
+
+  .feauture__card {
+    width: 90%;
+  }
+
+  .feauture__card h6 {
+    font-size: 15px;
+  }
+
+  .feauture__card p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features {
+    padding: 10px 1.2rem;
+  }
+
+  .feature__header h3 {
+    font-size: 28px;
+  }
+
+  .feauture__card {
+    width: 100%;
+  }
+
+  .feauture__card img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .feauture__card h6 {
+    font-size: 14px;
+  }
+
+  .feauture__card p {
+    font-size: 12.5px;
+  }
 }
