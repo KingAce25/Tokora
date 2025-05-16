@@ -39,6 +39,11 @@
   gap: 3rem;
 }
 
+.navigation a
+{
+  text-decoration: none;
+}
+
 .navigation .button {
   display: flex;
 }
@@ -51,6 +56,18 @@
   color: var(--btn-text);
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.actions button
+{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid black !important;
 }
 
 .navigation .button button:hover {

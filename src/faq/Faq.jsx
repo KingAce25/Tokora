@@ -25,7 +25,7 @@ const DropdownMenu = () => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto' }} id='faq'>
+    <div style={{ maxWidth: '400px', margin: '0 auto' }} id='faqs'>
       {menus.map((menu, index) => {
         const isOpen = openIndex === index;
 

@@ -48,7 +48,7 @@ const NavBar = () => {
               {darkMode ? <FiSun size={24} /> : <FiMoon size={24} />}
             </div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwDIjzdncHe_JAJFLuxffiYPlWiyJV9tUAytVHePnFb52G5Q/viewform?usp=dialog">
-              <button>Join Waitlist</button>
+            <button>Join Waitlist</button>
             </a>
           </div>
 
